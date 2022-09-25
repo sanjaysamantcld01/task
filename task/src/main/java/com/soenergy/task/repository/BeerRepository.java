@@ -57,6 +57,7 @@ public class BeerRepository {
 												new ParameterizedTypeReference<List<Beer>>() {});
 				
 			List<Beer> beers = responseEntity.getBody();
+			//test
 			logger.debug(String.format("getBeersFromPunkAPI - %d beers retrieved ",beers.size()));
 			return beers.stream()
 					.map(beer ->new Beer((beer.getIdentifier()+punkBeersStartIndex), 
